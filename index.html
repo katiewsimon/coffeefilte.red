@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title></title>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.7/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.7/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    .map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<div id='map_geo' class='map'> </div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoid2hpdG5leXBlbm4iLCJhIjoid2wtZUhDcyJ9.D6FHmWQct2OvR_CHkg33_g';
+var geojson = [
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-77.031952,38.913184]
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.413682,37.775408]
+    }
+  }
+];
+
+var mapGeo = L.mapbox.map('map_geo', 'whitneypenn.d6a9d7db')
+  .setView([37.8, -96], 4);
+
+var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);  
+mapGeo.scrollWheelZoom.disable();
+</script>
+</body>
+</html>
+View source
