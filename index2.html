@@ -104,7 +104,10 @@ myLayer.on('layeradd', function(e) {
 });
 
 // Add features to the map
+
 myLayer.setGeoJSON(geoJson);
+
+map.legendControl.addLegend('<strong>CoffeeFilte.red</strong>');
 
 $('#map').on('click', '.popup .cycle a', function() {
     var $slideshow = $('.slideshow'),
