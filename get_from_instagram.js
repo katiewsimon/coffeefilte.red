@@ -1,8 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+// oauth
 
 var http = require('http');
 var express = require('express');
 var api = require('instagram-node').instagram();
 var app = express();
+
+var pictures;
 
 
 api.use({
@@ -28,30 +36,15 @@ exports.handleauth = function(req, res) {
       
 
       api.tag_media_recent('latteart', function(err, medias, pagination, remaining, limit) {
-      		//var json = JSON.parse({"":""});
-      	//console.log(medias[1].location);
+
       	for (var i = 1; i < medias.length; i++) {
-      		console.log(medias[i].location);
-      		//res.send(medias[i].location);
-      		//console.log(json.location);
-      		//console.log(medias['link']);
-      		//var loc = medias.get('location');
-      		// if (medias.location == null) {
-      		// 	console.log('has the location!');
-      		// }
-
-      		// if (loc != null) {// if there is a location
-      		// 	res.send(medias.link);
-      		// }
-      	}
-      	// loop through array
-      		// link = picture
-      		//res.send(each picture)
-      		// latitude/longitude
-
-      	//
+      		var loc = medias[i].location;
+          if (loc != null) {
+            console.log(medias[i].location);
+            var latitude = medias[i].location.latitude;
+            var longitude = medias[i].location.latitude;
+          }
       });
-
     }
   });
 };
@@ -62,9 +55,38 @@ app.get('/authorize_user', exports.authorize_user);
 app.get('/oauth', exports.handleauth);
 
 
+// ajax 
 
-http.createServer(app).listen('3000', function(){
-  console.log("Express server listening on port " + '3000');
-});
+function readFile()
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+     }
+
+     xmlhttp.onreadystatechange=function()
+     {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+             document.getElementById("link").innerHTML=xmlhttp.responseText.split("\n");
+        }
+     }
 
 
+     xmlhttp.open("GET","https://api.instagram.com/v1/locations/{location-id}?access_token=ACCESS-TOKEN",true);
+     xmlhttp.send();
+ }
+ </script>
+ </head>
+ <body>
+
+ <div id="myDiv"><h2>"FILE.txt"</h2></div>
+ <button type="button" onclick="readFile()">FILE</button>
+
+ </body>
+ </html>
