@@ -11,15 +11,44 @@
   </style>
 </head>
 <body>
-<div id='map_geo' class='map'> </div>
+<style>
+.my-icon {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}
+.icon-dc {
+  background: #3ca0d3;
+}
+.icon-sf {
+  background: #63b6e5;
+}
+</style>
+<div id='map-two' class='map'> </div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1Ijoid2hpdG5leXBlbm4iLCJhIjoid2wtZUhDcyJ9.D6FHmWQct2OvR_CHkg33_g';
+var mapTwo = L.mapbox.map('map-two', 'whitneypenn.d6a9d7db
+')
+.setView([37.8, -96], 4);
+
+var myLayer = L.mapbox.featureLayer().addTo(mapTwo);
+
 var geojson = [
   {
     "type": "Feature",
     "geometry": {
       "type": "Point",
       "coordinates": [-77.031952,38.913184]
+    },
+    "properties": {
+      "icon": {
+        "className": "my-icon icon-dc", // class name to style
+        "html": "&#9733;", // add content inside the marker
+        "iconSize": null // size of icon, use null to set the size in CSS
+      }
     }
   },
   {
@@ -27,16 +56,24 @@ var geojson = [
     "geometry": {
       "type": "Point",
       "coordinates": [-122.413682,37.775408]
+    },
+    "properties": {
+      "icon": {
+        "className": "my-icon icon-sf", // class name to style
+        "html": "&#9733;", // add content inside the marker
+        "iconSize": null // size of icon, use null to set the size in CSS
+      }
     }
   }
 ];
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+      feature = marker.feature;
+  marker.setIcon(L.divIcon(feature.properties.icon));
+});
+myLayer.setGeoJSON(geojson);
 
-var mapGeo = L.mapbox.map('map_geo', 'whitneypenn.d6a9d7db')
-  .setView([37.8, -96], 4);
-
-var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);  
-mapGeo.scrollWheelZoom.disable();
+mapTwo.scrollWheelZoom.disable();
 </script>
 </body>
 </html>
-View source
