@@ -33,19 +33,7 @@ exports.handleauth = function(req, res) {
       console.log('Yay! Access token is ' + result.access_token);
       res.send('You made it!!'); // send js object converted to string
       // limit for more
-      
 
-      api.tag_media_recent('latteart', function(err, medias, pagination, remaining, limit) {
-
-      	for (var i = 1; i < medias.length; i++) {
-      		var loc = medias[i].location;
-          if (loc != null) {
-            console.log(medias[i].location);
-            var latitude = medias[i].location.latitude;
-            var longitude = medias[i].location.latitude;
-          }
-      });
-    }
   });
 };
 

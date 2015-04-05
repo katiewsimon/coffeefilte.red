@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Slideshow gallery in a marker tooltip</title>
+<title>CoffeeFilte.red</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
 <script src="require.js"></script>
@@ -44,12 +44,12 @@
 
 xmlhttp = new XMLHttpRequest();
 
-xmlhttp.open("GET","http://localhost:3000/authenticated",false);
+xmlhttp.open("GET","http://coffeefilte.red/authenticated",false);
 xmlhttp.send();
 
 var authenticated = JSON.parse(xmlhttp.responseText);
 if (authenticated.authenticated === false) {
-  window.location = 'http://localhost:3000/authorize_user'
+  window.location = 'http://coffeefilte.red/authorize_user'
 }
 
 L.mapbox.accessToken = 'pk.eyJ1Ijoid2hpdG5leXBlbm4iLCJhIjoid2wtZUhDcyJ9.D6FHmWQct2OvR_CHkg33_g';
@@ -59,7 +59,7 @@ var myLayer = L.mapbox.featureLayer().addTo(map);
 
 xmlhttp = new XMLHttpRequest();
 
-xmlhttp.open("GET","http://localhost:3000/coffee",false);
+xmlhttp.open("GET","http://coffeefilte.red/coffee",false);
 xmlhttp.send();
 
 var geoJson = JSON.parse(xmlhttp.responseText);
@@ -104,7 +104,10 @@ myLayer.on('layeradd', function(e) {
 });
 
 // Add features to the map
+
 myLayer.setGeoJSON(geoJson);
+
+map.legendControl.addLegend('<strong>CoffeeFilte.red</strong>');
 
 $('#map').on('click', '.popup .cycle a', function() {
     var $slideshow = $('.slideshow'),
