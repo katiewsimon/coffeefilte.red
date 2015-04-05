@@ -1,0 +1,41 @@
+Express server listening on port 80
+Express server listening on port 80
+Error: Wrong param "options"
+    at Object.use (/root/coffeefilte.red/node_modules/instagram-node/lib/instagram.js:298:15)
+    at exports.getcoffee (/root/coffeefilte.red/app2.js:38:9)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/route.js:110:13)
+    at Route.dispatch (/root/coffeefilte.red/node_modules/express/lib/router/route.js:91:3)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at /root/coffeefilte.red/node_modules/express/lib/router/index.js:267:22
+    at Function.proto.process_params (/root/coffeefilte.red/node_modules/express/lib/router/index.js:321:12)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/index.js:261:10)
+    at expressInit (/root/coffeefilte.red/node_modules/express/lib/middleware/init.js:23:5)
+Yay! Access token is 295218846.c65c3b4.888c93156f2f45f98cd923b022c4e343
+Express server listening on port 80
+Error: Wrong param "options"
+    at Object.use (/root/coffeefilte.red/node_modules/instagram-node/lib/instagram.js:298:15)
+    at exports.getcoffee (/root/coffeefilte.red/app2.js:38:9)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/route.js:110:13)
+    at Route.dispatch (/root/coffeefilte.red/node_modules/express/lib/router/route.js:91:3)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at /root/coffeefilte.red/node_modules/express/lib/router/index.js:267:22
+    at Function.proto.process_params (/root/coffeefilte.red/node_modules/express/lib/router/index.js:321:12)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/index.js:261:10)
+    at expressInit (/root/coffeefilte.red/node_modules/express/lib/middleware/init.js:23:5)
+Yay! Access token is 295218846.c65c3b4.888c93156f2f45f98cd923b022c4e343
+Express server listening on port 80
+Error: Wrong param "options"
+    at Object.use (/root/coffeefilte.red/node_modules/instagram-node/lib/instagram.js:298:15)
+    at exports.getcoffee (/root/coffeefilte.red/app2.js:38:9)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/route.js:110:13)
+    at Route.dispatch (/root/coffeefilte.red/node_modules/express/lib/router/route.js:91:3)
+    at Layer.handle [as handle_request] (/root/coffeefilte.red/node_modules/express/lib/router/layer.js:82:5)
+    at /root/coffeefilte.red/node_modules/express/lib/router/index.js:267:22
+    at Function.proto.process_params (/root/coffeefilte.red/node_modules/express/lib/router/index.js:321:12)
+    at next (/root/coffeefilte.red/node_modules/express/lib/router/index.js:261:10)
+    at expressInit (/root/coffeefilte.red/node_modules/express/lib/middleware/init.js:23:5)
+Yay! Access token is 295218846.c65c3b4.888c93156f2f45f98cd923b022c4e343
+Express server listening on port 3000
