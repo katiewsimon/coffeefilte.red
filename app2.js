@@ -91,8 +91,8 @@ app.get('/require.js', function(req, res) {
     res.sendFile(__dirname + '/require.js');
 });
 
-http.createServer(app).listen('3000', function(){
-  console.log("Express server listening on port " + '3000');
+http.createServer(app).listen('80', function(){
+  console.log("Express server listening on port " + '80');
 });
 
 
