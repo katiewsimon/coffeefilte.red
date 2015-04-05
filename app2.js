@@ -11,7 +11,7 @@ api.use({
   client_secret: '9d0dee9f4ceb403a901953243cf270b1'
 });
 
-var redirect_uri = 'http://localhost:3000/oauth';
+var redirect_uri = 'http://coffeefilte.red/oauth';
 
 exports.authorize_user = function(req, res) {
   res.redirect(api.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
@@ -85,10 +85,10 @@ app.get('/authorize_user', exports.authorize_user);
 app.get('/oauth', exports.handleauth);
 
 app.get('/', function(req, res) {
-    res.sendFile('/Users/katiesimon/Dropbox/hackathons/hackholyoke/index2.html');
+    res.sendFile(__dirname + '/index2.html');
 });
 app.get('/require.js', function(req, res) {
-    res.sendFile('/Users/katiesimon/Dropbox/hackathons/hackholyoke/require.js');
+    res.sendFile(__dirname + '/require.js');
 });
 
 http.createServer(app).listen('3000', function(){
